@@ -24,9 +24,15 @@ export const Container = styled.div`
 `;
 
 export const Hamburger = styled.div`
+  display: none;
+
   & > svg {
     width: 36px;
     height: 36px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: block;
   }
 `;
 

@@ -22,6 +22,10 @@ export const Flex = styled.div`
       gap: var(--spacement-small);
     }
 
+    & > img {
+      max-width: 180px;
+    }
+
     & ul {
       list-style: none;
       & > li {

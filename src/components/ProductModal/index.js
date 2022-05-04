@@ -27,7 +27,7 @@ function ProductModal() {
   return (
     <ChakraModal isOpen={open} onClose={onClose} borderRadius="none" autoFocus={false}>
       <ModalOverlay />
-      <ModalContent bg="var(--absolute-white)" pb="var(--spacement-large)" maxW="90%">
+      <ModalContent bg="var(--absolute-white)" pb="var(--spacement-large)" ml={4} mr={4}>
         <ModalHeader />
         <ModalCloseButton />
         <ModalBody>

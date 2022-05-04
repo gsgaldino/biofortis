@@ -27,7 +27,7 @@ function Modal() {
   return (
     <ChakraModal isOpen={open} onClose={onClose} borderRadius="none" autoFocus={false}>
       <ModalOverlay />
-      <ModalContent bg="var(--absolute-white)" maxW="90%">
+      <ModalContent bg="var(--absolute-white)" ml={4} mr={4}>
         <ModalHeader />
         <ModalCloseButton />
         <ModalBody>

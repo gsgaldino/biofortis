@@ -19,7 +19,7 @@ function Typography({
 }
 
 Typography.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   as: PropTypes.string,
   variant: PropTypes.oneOf([
     'body-default',
@@ -37,6 +37,7 @@ Typography.defaultProps = {
   as: 'p',
   variant: 'body-default',
   color: 'dark',
+  children: '',
 };
 
 export default Typography;
