@@ -1,0 +1,8 @@
+{
+  "short_name": "Biofortis",
+  "name": "Biofortis fertilizantes",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#436A3B",
+  "background_color": "#EDF2F4"
+}
