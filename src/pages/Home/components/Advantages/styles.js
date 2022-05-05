@@ -9,7 +9,6 @@ export const Background = styled.section`
     content: '';
     width: 100%;
     height: 100%;
-    background: var(--primary-1);
     top: 0;
     left: 0;
     position: absolute;

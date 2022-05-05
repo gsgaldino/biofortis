@@ -24,5 +24,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'linebreak-style': 0,
     'react/jsx-props-no-spreading': 0,
+    'no-unsafe-optional-chaining': 'off',
   },
 };

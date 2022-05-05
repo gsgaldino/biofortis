@@ -4,27 +4,13 @@ import Provider from '~/components/Provider';
 import Typography from '~/components/Typography';
 import Card from '~/components/Card';
 
+import { useFields } from '~/context/Fields';
+
 import * as S from './styles';
 
 function Products() {
-  const cards = [
-    {
-      name: 'Nitruran 32',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing magnis in morbi amet sed egestas hendrerit.',
-    },
-    {
-      name: 'KCL',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing magnis in morbi amet sed egestas hendrerit.',
-    },
-    {
-      name: 'MAP',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing magnis in morbi amet sed egestas hendrerit.',
-    },
-    {
-      name: 'NPro Max',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing magnis in morbi amet sed egestas hendrerit.',
-    },
-  ];
+  const { fields } = useFields();
+  const products = fields?.data?.produtos;
 
   return (
     <S.Container id="produtos">
@@ -34,9 +20,13 @@ function Products() {
         </S.Title>
 
         <S.Cards>
-          {cards.map((card) => (
-            <div key={card.name}>
-              <Card name={card.name} description={card.description} />
+          {products && products.map((prod) => (
+            <div key={prod.producttitle[0].text}>
+              <Card
+                name={prod.producttitle[0].text}
+                description={prod.productdescription}
+                image={prod.productimage.url}
+              />
             </div>
           ))}
         </S.Cards>

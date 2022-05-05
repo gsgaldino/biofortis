@@ -42,7 +42,7 @@ function ProductModal() {
           </S.Title>
 
           <Typography color="dark">
-            {product?.description}
+            yo
           </Typography>
         </ModalBody>
       </ModalContent>

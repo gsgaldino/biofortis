@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
-  background: var(--primary-1);
+  background: var(--light-gray);
   padding: var(--spacement-x-large) 0px;
 `;
 
@@ -19,7 +19,11 @@ export const Flex = styled.div`
     }
 
     &:last-child {
-      gap: var(--spacement-small);
+      gap: var(--spacement-default);
+
+      & p {
+        font-size: 14px !important;
+      }
     }
 
     & > img {
@@ -32,7 +36,7 @@ export const Flex = styled.div`
         margin: var(--spacement-small) 0px;
 
         & > a:hover {
-          text-decoration: var(--absolute-white) underline;
+          text-decoration: var(--text-dark) underline;
         }
       }
     }
@@ -54,5 +58,10 @@ export const Flex = styled.div`
 
 export const Address = styled.div`
   display: flex;
+  align-items: flex-start;
   gap: var(--spacement-small);
+
+  & > img {
+    margin-top: 4px;
+  }
 `;

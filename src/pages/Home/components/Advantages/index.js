@@ -31,7 +31,7 @@ function Advantages() {
       <Provider>
         <S.Title>
           <Typography variant="h3-heavy" color="dark">
-            Por que contratar a
+            Por que escolher a
             {' '}
             <span>Biofortis</span>
             ?

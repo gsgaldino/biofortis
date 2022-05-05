@@ -1,11 +1,14 @@
 import React from 'react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { PrismicProvider } from '@prismicio/react';
 
 import ModalProvider from './context/Modal';
 import ProductModalProvider from './context/ProductModal';
+import FieldsProvider from './context/Fields';
 
 import Routes from './routes';
 import GlobalStyles from './styles/globals';
+import { client } from './prismic';
 
 const theme = extendTheme({
   colors: {
@@ -41,12 +44,16 @@ const theme = extendTheme({
 export default function App() {
   return (
     <ChakraProvider theme={theme}>
-      <ModalProvider>
-        <ProductModalProvider>
-          <Routes />
-        </ProductModalProvider>
-        <GlobalStyles />
-      </ModalProvider>
+      <PrismicProvider client={client}>
+        <ModalProvider>
+          <ProductModalProvider>
+            <FieldsProvider>
+              <Routes />
+            </FieldsProvider>
+          </ProductModalProvider>
+          <GlobalStyles />
+        </ModalProvider>
+      </PrismicProvider>
     </ChakraProvider>
   );
 }

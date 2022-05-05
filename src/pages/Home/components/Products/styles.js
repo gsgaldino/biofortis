@@ -11,7 +11,7 @@ export const Title = styled.div`
 
 export const Cards = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 
   @media screen and (max-width: 767px) {

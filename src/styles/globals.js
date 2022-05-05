@@ -6,12 +6,12 @@ const GlobalStyles = createGlobalStyle`
 
     /** Colors **/
     --primary-1: #436A3B;
-    --light-gray: #e2eafc;
-    --absolute-white: #EDF2F4;
+    --light-gray: #EDF2F4;
+    --absolute-white: #fff;
     --absolute-black: #1E1E1C;
 
     --text-light: #FDFDFD;
-    --text-dark: #5B3E2C;
+    --text-dark: #7C7C7B;
 
     /** Fonts **/
     --font-family: "Arial", sans-serif;

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PrismicRichText } from '@prismicio/react';
 
-import plant from '~/assets/isotipo.svg';
 import Typography from '../Typography';
 
 import { useModal } from '~/context/ProductModal';
 
 import * as S from './styles';
 
-function Card({ name, description }) {
+function Card({ name, description, image }) {
   const {
     setProduct,
     setIsOpen,
@@ -21,9 +21,11 @@ function Card({ name, description }) {
 
   return (
     <S.Card onClick={handleCardClick}>
-      <img src={plant} alt="foo" />
+      <img src={image} alt="foo" />
       <Typography color="primary" variant="h4-heavy">{name}</Typography>
-      <Typography>{description}</Typography>
+      <Typography as="div">
+        <PrismicRichText field={description} />
+      </Typography>
     </S.Card>
   );
 }
@@ -31,11 +33,13 @@ function Card({ name, description }) {
 Card.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
+  image: PropTypes.string,
 };
 
 Card.defaultProps = {
   name: '',
   description: '',
+  image: '',
 };
 
 export default Card;
