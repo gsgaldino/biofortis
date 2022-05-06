@@ -25,5 +25,8 @@ module.exports = {
     'linebreak-style': 0,
     'react/jsx-props-no-spreading': 0,
     'no-unsafe-optional-chaining': 'off',
+    'react/forbid-prop-types': 'off',
+    'quote-props': 'off',
+    'no-console': 'off',
   },
 };

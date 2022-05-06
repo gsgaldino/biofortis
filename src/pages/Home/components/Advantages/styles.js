@@ -25,7 +25,7 @@ export const Title = styled.div`
   margin: 0px 0px calc(var(--spacement-large) * 2) 0px;
   text-align: center;
 
-  & span {
+  & strong {
     color: var(--primary-1);
   }
 

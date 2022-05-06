@@ -15,24 +15,29 @@ function Card({ name, description, image }) {
   } = useModal();
 
   const handleCardClick = () => {
-    setProduct({ name, description });
+    setProduct({ name, description, image });
     setIsOpen(true);
   };
 
   return (
     <S.Card onClick={handleCardClick}>
-      <img src={image} alt="foo" />
-      <Typography color="primary" variant="h4-heavy">{name}</Typography>
-      <Typography as="div">
-        <PrismicRichText field={description} />
-      </Typography>
+      <div>
+        <img src={image} alt="foo" />
+      </div>
+
+      <div>
+        <Typography color="primary" variant="h4-heavy">{name}</Typography>
+        <Typography as="div">
+          <PrismicRichText field={description} />
+        </Typography>
+      </div>
     </S.Card>
   );
 }
 
 Card.propTypes = {
   name: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   image: PropTypes.string,
 };
 

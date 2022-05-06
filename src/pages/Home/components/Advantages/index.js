@@ -1,47 +1,33 @@
 import React from 'react';
+import { PrismicRichText } from '@prismicio/react';
 
 import Typography from '~/components/Typography';
 import Provider from '~/components/Provider';
 import Item from './components/Item';
 
-import plant from '~/assets/icons/plant.svg';
-import chart from '~/assets/icons/chart.svg';
-import delivery from '~/assets/icons/delivery.svg';
+import { useFields } from '~/context/Fields';
 
 import * as S from './styles';
 
 function Advantages() {
-  const items = [
-    {
-      img: plant,
-      description: 'Fertilizantes de alta qualidade',
-    },
-    {
-      img: chart,
-      description: 'Os melhores preços do mercado',
-    },
-    {
-      img: delivery,
-      description: 'Entregas por todo o Brasil',
-    },
-  ];
+  const { fields } = useFields();
+
+  const title = fields?.data?.advantagestitle;
+  const items = fields?.data?.advantages;
 
   return (
     <S.Background id="vantagens">
       <Provider>
         <S.Title>
-          <Typography variant="h3-heavy" color="dark">
-            Por que escolher a
-            {' '}
-            <span>Biofortis</span>
-            ?
+          <Typography variant="h3-heavy" color="dark" as="div">
+            <PrismicRichText field={title} />
           </Typography>
         </S.Title>
 
         <S.Flex>
-          {items.map((item) => (
-            <div key={item.description}>
-              <Item img={item.img} description={item.description} />
+          {items && items.map((item) => (
+            <div key={item.advantagetitle[0].text}>
+              <Item img={item.advantageimage.url} description={item.advantagetitle[0].text} />
             </div>
           ))}
         </S.Flex>

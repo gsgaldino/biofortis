@@ -18,7 +18,7 @@ function Item({ img, description }) {
 
 Item.propTypes = {
   img: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
 };
 
 export default Item;
