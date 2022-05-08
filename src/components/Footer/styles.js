@@ -7,6 +7,7 @@ export const Footer = styled.footer`
 
 export const Logo = styled.div`
   padding: var(--spacement-default);
+  color: var(--text-dark);
 `;
 
 export const Flex = styled.div`

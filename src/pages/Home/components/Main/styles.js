@@ -1,17 +1,26 @@
 import styled, { keyframes } from 'styled-components';
 
-import banner1 from '~/assets/banner1.jpg';
-import banner2 from '~/assets/banner2.jpg';
-
-const changeBanner = keyframes`
-  0% {
-    background-image: url(${banner1});
-    background-position: 0px;
+const zoomIn = keyframes`
+  from {
+    background-size: 100%;
   }
 
-  100% {
-    background-image: url(${banner2});
-    background-position: -100px;
+  to {
+    background-size: 110%;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 1;
+  }
+
+  102% {
+    opacity: 0;
   }
 `;
 
@@ -27,8 +36,8 @@ export const Banner = styled.div`
     height: 100%;
     position: absolute;
     z-index: 0;
-    background-size: calc(100% + 200px);
-    animation: ${changeBanner} 20s infinite;
+    background: ${({ background }) => (`url(${background})`)};
+    animation: ${zoomIn} 30s infinite, ${fadeOut} 30s infinite;
     animation-direction: alternate;
   }
 

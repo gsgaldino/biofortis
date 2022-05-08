@@ -1,14 +1,19 @@
 import React from 'react';
+import { PrismicRichText } from '@prismicio/react';
 
 import Provider from '../Provider';
 import Typography from '../Typography';
 import Logo from '../Logo';
 
+import { useFields } from '~/context/Fields';
 import mapMark from '~/assets/icons/map-mark.svg';
 
 import * as S from './styles';
 
 function Footer() {
+  const { fields } = useFields();
+  console.log('FIELDS', fields);
+
   const links = [
     {
       text: 'Política de Privacidade',
@@ -34,6 +39,7 @@ function Footer() {
 
         <S.Logo>
           <Logo />
+          <PrismicRichText field={fields?.data?.footertext} />
         </S.Logo>
 
         <S.Flex>
