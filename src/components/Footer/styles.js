@@ -5,17 +5,23 @@ export const Footer = styled.footer`
   padding: var(--spacement-x-large) 0px;
 `;
 
+export const Logo = styled.div`
+  padding: var(--spacement-default);
+`;
+
 export const Flex = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: calc(var(--spacement-x-large) * 8);
 
   & > div {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin: var(--spacement-x-large) 0px;
 
     &:first-child {
-      gap: var(--spacement-x-large);
+      gap: var(--spacement-small);
     }
 
     &:last-child {
@@ -33,7 +39,7 @@ export const Flex = styled.div`
     & ul {
       list-style: none;
       & > li {
-        margin: var(--spacement-small) 0px;
+        margin-bottom: var(--spacement-large);
 
         & > a:hover {
           text-decoration: var(--text-dark) underline;
@@ -57,11 +63,12 @@ export const Flex = styled.div`
 `;
 
 export const Address = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacement-small);
+  position: relative;
 
   & > img {
     margin-top: 4px;
+    position: absolute;
+    top: 0px;
+    left: -20px;
   }
 `;

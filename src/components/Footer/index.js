@@ -32,9 +32,23 @@ function Footer() {
     <S.Footer>
       <Provider>
 
+        <S.Logo>
+          <Logo />
+        </S.Logo>
+
         <S.Flex>
+
           <div>
-            <Logo />
+            <S.Address>
+              <img src={mapMark} alt="ícone marcação de mapa" />
+              <Typography color="dark">
+                Rua Gabriel Prestes, 75 - Santana, São Paulo - SP
+              </Typography>
+            </S.Address>
+            <Typography color="dark">CNPJ/MF: 38.947.929/0001-03</Typography>
+          </div>
+
+          <div>
             <nav>
               <ul>
                 {links.map((link) => (
@@ -48,16 +62,6 @@ function Footer() {
                 ))}
               </ul>
             </nav>
-          </div>
-
-          <div>
-            <S.Address>
-              <img src={mapMark} alt="ícone marcação de mapa" />
-              <Typography color="dark">
-                Rua Gabriel Prestes, 75 - Santana, São Paulo - SP
-              </Typography>
-            </S.Address>
-            <Typography color="dark">CNPJ/MF: 38.947.929/0001-03</Typography>
           </div>
         </S.Flex>
 
