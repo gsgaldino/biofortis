@@ -12,7 +12,6 @@ import * as S from './styles';
 
 function Footer() {
   const { fields } = useFields();
-  console.log('FIELDS', fields);
 
   const links = [
     {

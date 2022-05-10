@@ -27,6 +27,7 @@ const fadeOut = keyframes`
 export const Banner = styled.div`
   padding: 120px 0px;
   position: relative;
+  margin-top: 66px;
 
   &:after {
     content: '';
